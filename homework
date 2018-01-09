@@ -1,0 +1,14 @@
+试析随机森林为何比决策树 Bagging 集成的训练速度更快
+    随机森林不仅会随机样本，还会在所有样本属性中随机几种出来计算。这样每次生成分类器时都是对部分属性计算最优，速度会比Bagging计算全属性要快。
+    代码在 random_forest.py，使用数据集为给定的下棋的数据集。需要比较 random forest 和 bagging 的训练速度
+
+MultiBoosting算法与Iterative Bagging的优缺点
+    MultiBoosting由于集合了Bagging，Wagging，AdaBoost，可以有效的降低误差和方差，特别是误差。但是训练成本和预测成本都会显著增加。
+    代码在 multi_boosting.py，使用数据集为给定的下棋的数据集。注释在代码里面，可以看一下。
+
+    Iterative Bagging相比Bagging会降低误差，但是方差上升。由于Bagging本身就是一种降低方差的算法，所以Iterative Bagging相当于Bagging与单分类器的折中。
+    注意，因为 iterative bagging 是用作 regression 的，所以给定的数据集并不适用于这个方法。所以我从 uci，找了一个数据集
+    NASA data set, obtained from a series of aerodynamic and acoustic tests of two and three-dimensional airfoil blade sections conducted in an anechoic wind tunnel
+    注释在代码里面
+
+
